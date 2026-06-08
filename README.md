@@ -35,24 +35,6 @@ npx skills update
 you can compact context without losing the thread — it offers itself proactively
 and asks (via a quick poll) which threads to keep before condensing.
 
-> *mand* is Dutch for "basket": drop the long story in the basket.
-
-## Layout
-
-```
-skills/
-└── mand/SKILL.md      # one folder per skill; auto-discovered by npx skills
-```
-
-No `.claude-plugin/` manifest is needed — the CLI finds skills at
-`skills/<name>/SKILL.md` on its own. (Add a `marketplace.json` only if you also
-want the native Claude Code `/plugin marketplace add` path.)
-
-## Adding another skill
-
-Drop a new folder under `skills/`, e.g. `skills/foo/SKILL.md`, commit, and it's
-installable with `npx skills add sugarrushdev/skills --skill foo`.
-
-## License
-
-MIT
+> Named after the *Meneer Mandje* bit from Maxim Hartman's *Omroep Maxim*:
+> "Mandje van Tichelaar… dat kan korter… nóg korter… **Mand!**" — which is
+> exactly what this does to a conversation.
