@@ -43,11 +43,32 @@ Then pick from the table below and state each choice in one line, so he can over
 - `CLAUDE.md` contains one line: `@AGENTS.md`.
 - `.dev.vars` and `.env` are gitignored. Add a `.dev.vars.example` with names only.
 
-**`AGENTS.md` at the root** (and in any folder with its own purpose) has these sections:
+**Folder structure:** keep what the framework scaffolds (Astro, Nuxt, Vite...); don't invent parallel names.
+Record only deviations.
+
+**`AGENTS.md` at the root** has these sections:
 - **Intent:** why it exists, for whom, and the non-negotiables (what would make it a failure even if it works).
+- **Folder map:** every top-level folder with one line of intent, and whether it has its own `AGENTS.md`.
 - **How it works:** the main parts and how they connect.
 - **Commands:** dev, test, build, deploy.
 - **Rules:** this project's standards and its recorded deviations.
+
+**Intent docs per folder.** Every `AGENTS.md` gets a sibling `CLAUDE.md` containing only `@AGENTS.md` (Claude
+Code reads `CLAUDE.md`, and loads a folder's own one when working there).
+
+| Folder | Own `AGENTS.md`? |
+| --- | --- |
+| Ours, with a meaning only this project has (an API worker, a render service, i18n, a tenant, a package) | Yes |
+| A framework default used as the framework intends (`pages/`, `components/`, `public/`, `migrations/`) | No: one line in the root folder map |
+| A framework default used differently than the framework intends | Yes, short, explaining the difference |
+| Generated or third-party (`node_modules/`, `dist/`, `.wrangler/`, build caches) | Never; the folder map marks them "generated, don't edit" |
+
+A folder `AGENTS.md` stays under ~40 lines:
+1. "Part of `<project>`. Read the root `AGENTS.md` first."
+2. **Intent:** what this folder is for, and what doesn't belong here.
+3. **Contracts:** what other folders rely on (exports, file names, schemas, routes).
+4. **Rules:** local constraints (e.g. "runs in a Worker: no Bun-only APIs").
+5. **Tests:** where and how to run them.
 
 **`docs/`:**
 - `specs/YYYY-MM-DD-<topic>-design.md`: one per design, written before building it.
