@@ -1,7 +1,12 @@
 # skills
 
 Cross-agent skills installable with [`npx skills`](https://github.com/vercel-labs/skills).
-First up: **mand**, a conversation condenser.
+Skills:
+
+- **mand**: a conversation condenser.
+- **gauntlet-loop**: turns a goal into a builder-versus-critic prompt that loops until it beats a real reference.
+- **grill-me**: interviews you about a plan until it holds up.
+- **sugarrush-standards**: Sugar Rush Development's defaults for new projects (stack, Cloudflare hosting, repo, docs, CI/CD, secrets).
 
 ## Install
 
