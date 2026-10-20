@@ -24,7 +24,7 @@ Then pick from the table below and state each choice in one line, so he can over
 | Runtimes | `mise.toml` in the repo pins everything (bun, node, python via uv). Never system or brew runtimes. |
 | JS | Bun for install, run, test and build. TypeScript, strict. |
 | Public site (SEO, i18n) | Astro, static, with built-in i18n routing (`hreflang`, canonical, sitemap per locale). Interactive parts as Vue islands. |
-| App behind login | Vue (try Vapor mode, fall back to regular Vue). Either Vue pages as client-only islands in the same Astro project, or a Vite SPA. `noindex`. |
+| App behind login | Vue (regular; not Vapor mode yet). Either Vue pages as client-only islands in the same Astro project, or a Vite SPA. `noindex`. |
 | SSR needed | Nuxt, only when server rendering is a real requirement. |
 | CSS | Modern vanilla CSS: custom properties, native nesting. In Vue SFCs `<style module="styles">` with `:class="styles.x"`. Never Tailwind. |
 | Accessibility | WCAG 2.2 AA from the first commit, checked with axe in tests. Keyboard-only usable, visible focus, reduced motion. |
